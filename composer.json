@@ -1,6 +1,6 @@
 {
     "name": "mworld/whatsapp-chatbot",
-    "description": "An awesome package made by Michael Yousrie.",
+    "description": "The base scaffold for whatsapp chatbots",
     "autoload": {
         "psr-4": {
             "WhatsappChatbot\\": "src/"
