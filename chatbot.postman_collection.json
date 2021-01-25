@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "5c850188-9091-4862-a5f9-4891370e8610",
+		"name": "NEW SBA BOT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Answers",
+			"item": [
+				{
+					"name": "Add Answer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_token\": \"gJ38vuCwktwU8S8Wc71o\",\r\n    \"key\": \"default\",\r\n    \"texts\": {\r\n        \"1\": \"Test answer\",\r\n        \"2\": \"رسالة تجريبية\"\r\n    },\r\n    \"method\": null\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/bot/answers/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"bot",
+								"answers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Child To Answer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_token\": \"gJ38vuCwktwU8S8Wc71o\",\r\n    \"key\": null,\r\n    \"input\": \"1\",\r\n    \"method\": \"testMethod\",\r\n    \"texts\": {\r\n        \"1\": \"Test child answer\",\r\n        \"2\": \"رسالة تجريبية ابن\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/bot/answers/8/child",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"bot",
+								"answers",
+								"8",
+								"child"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Keywords",
+			"item": [
+				{
+					"name": "Create Keyword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_token\": \"gJ38vuCwktwU8S8Wc71o\",\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/bot/keywords",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"bot",
+								"keywords"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

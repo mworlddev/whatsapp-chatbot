@@ -1,0 +1,16 @@
+{
+    "name": "michaelyousrie/whatsapp-chatbot",
+    "description": "An awesome package made by Michael Yousrie.",
+    "autoload": {
+        "psr-4": {
+            "WhatsappChatbot\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "WhatsappChatbot\\ServiceProvider"
+            ]
+        }
+    }
+}
