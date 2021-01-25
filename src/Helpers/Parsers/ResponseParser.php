@@ -3,6 +3,7 @@ namespace WhatsappChatbot\Helpers\Parsers;
 
 use Exception;
 use Carbon\Carbon;
+use WhatsappChatbot\Models\Answer;
 use WhatsappChatbot\Helpers\Classes\ParsedRequest;
 
 class ResponseParser
@@ -38,6 +39,11 @@ class ResponseParser
                 "date" => Carbon::now()->toDateTimeString()
             ]
         ];
+    }
+
+    public static function fromAnswer(Answer $answer, ParsedRequest $request)
+    {
+        return self::message($request, $answer->getTextInLang($request->user->lang_id));
     }
 
     public static function unknownAnswer(ParsedRequest $request)
