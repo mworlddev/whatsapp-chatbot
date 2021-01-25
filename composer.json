@@ -1,5 +1,5 @@
 {
-    "name": "michaelyousrie/whatsapp-chatbot",
+    "name": "mworld/whatsapp-chatbot",
     "description": "An awesome package made by Michael Yousrie.",
     "autoload": {
         "psr-4": {
