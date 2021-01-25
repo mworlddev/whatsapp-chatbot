@@ -34,7 +34,7 @@ class MessagesHandler
             ]);
         }
 
-        $keyword = Keyword::where('keyword', strtolower($request->msg))->first();
+        $keyword = Keyword::where('name', strtolower($request->msg))->first();
 
         if (!empty($keyword)) {
             return $keyword->executeMethod($request);
