@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use WhatsappChatbot\Api\Controllers\AnswersController;
 use WhatsappChatbot\Api\Controllers\KeywordsController;
+use WhatsappChatbot\Api\Controllers\UploadsController;
 use WhatsappChatbot\Api\Middlewares\VerifyUserApiTokenMiddleware;
 
 Route::group(['prefix' => 'api/bot', 'middleware' => [VerifyUserApiTokenMiddleware::class, 'api']], function() {
@@ -19,4 +20,6 @@ Route::group(['prefix' => 'api/bot', 'middleware' => [VerifyUserApiTokenMiddlewa
         Route::post('/', [KeywordsController::class, 'store'])
             ->name('keywords-store');
     });
+
+    Route::post('/uploads', [UploadsController::class, 'store']);
 });
