@@ -20,8 +20,9 @@ class CreateLanguagesTable extends Migration
             $table->timestamps();
         });
 
-        // MAKE lang_id in users a foreign key.
+        // MAKE create lang_id in users and make it a foreign key.
         Schema::table('users', function(Blueprint $table) {
+            $table->unsignedBigInteger('lang_id')->after('password')->nullable();
             $table->foreign('lang_id')->references('id')->on('languages')->onDelete('cascade');
         });
 
