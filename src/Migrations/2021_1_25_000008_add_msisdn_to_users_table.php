@@ -14,7 +14,7 @@ class AddMsisdnToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('msisdn');
+            $table->string('msisdn')->after('id');
         });
     }
 
